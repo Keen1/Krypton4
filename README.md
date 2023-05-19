@@ -31,7 +31,7 @@ To make a point of how a Vigenère cipher is an improvement upon a monoalphabeti
 
 The Cryptanalysis.py python script in this repository conducts a generic frequency anaylsis as well as a more targeted analysis which will be discussed shortly.
 Here is the output from the generic frequency analysis, similar to the one we ran in the krypton3 game:
-![image](https://github.com/Keen1/Krypton4/assets/20232809/bc738d6e-b83a-4a7d-9131-a3a74fb3eb5b)
+![alt text](https://github.com/Keen1/Krypton4/blob/main/Fa_mono.png?raw=true)
 
 We can see the distribution of letters among the cipher text is much better, and making a guess at any letter in the key is a blind guess with just this analysis. 
 We need to take into account that the key length is given. If we know the key length, a more refined frequency analysis is possible. 
@@ -40,12 +40,15 @@ At this point I must make a point to state that I may have overlooked standard p
 
 The Bucket class accounts for the fact that each letter in the key is on its own a variable, with 26 possibilities for each letter. This script compiles each found file on the game server into one in 6 letter increments, the same length as the key. 
 
-Taking a step back, we can look at a Vigenère cipher as a monoalphabetic cipher repeated for each length of the key. If we examine and compute a frequency analysis on each "bucket" or letter variable in the key, a more telling story is told:
-![image](https://github.com/Keen1/Krypton4/assets/20232809/3f75b84f-d6b9-492b-b690-9e5b95626803)
+Taking a step back, we can look at a Vigenère cipher as a monoalphabetic cipher repeated for each length of the key. 
 
-The remaining buckets are left out for brevity, but have similiar frequency distributions. We can see the frequency dstribution for the first two buckets are much more similar to the one we saw in Krypton3. This is because each bucket can be thought of as a  monoalphabetic cipher on its own, since the actual key of the Vigenère never changes; it is only iterated over for each letter of the ciphertext and repeated til the end of the file. Using the previous resources for frequency distributions of the English language, we can make guesses at the shift the key is making and attempt to decrypt the password:
+If we examine and compute a frequency analysis on each "bucket" or letter variable in the key, a more telling story is told:
 
-![image](https://github.com/Keen1/Krypton4/assets/20232809/d649854e-c991-489b-9e94-615dd3ff8223)
+![alt text](https://github.com/Keen1/Krypton4/blob/main/Fa_poly.png?raw=true)
 
-We are in.
+The remaining buckets are left out for brevity, but have similiar frequency distributions. We can see the frequency dstribution for the first two buckets are much more similar to the one we saw in Krypton3. This is because each bucket can be thought of as a  monoalphabetic cipher on its own, since the actual key of the Vigenère never changes; it is only iterated over for each letter of the ciphertext and repeated til the end of the file. 
+
+Using the previous resources for frequency distributions of the English language, we can make guesses at the shift the key is making and attempt to decrypt the password.
+
+
 
