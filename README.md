@@ -1,5 +1,5 @@
 # Krypton4
-A walkthrough of a solution to the Krypton4 cipher game at overthewire[.]org
+A walkthrough of a solution to the Krypton4 cipher game at overthewire.org
 
 # DISCLAIMER
 In the spirit of the game, you will find no password here. 
